@@ -1,0 +1,45 @@
+﻿{
+  "name": "OrderApp",
+  "short_name": "OrderApp",
+  "start_url": "http://localhost:55804/",
+  "icons": [
+    {
+      "src": "images/splashscreen.png",
+      "sizes": "620x300"
+    },
+    {
+      "src": "images/logo.png",
+      "sizes": "150x150"
+    },
+    {
+      "src": "images/widelogo.png",
+      "sizes": "310x150"
+    },
+    {
+      "src": "images/storelogo.png",
+      "sizes": "50x50"
+    },
+    {
+      "src": "images/logo44.png",
+      "sizes": "44x44"
+    },
+    {
+      "src": "images/smalllogo.png",
+      "sizes": "30x30"
+    }
+  ],
+  "splash_screens": [
+    {
+      "src": "images/splashscreen.png",
+      "sizes": "620x300"
+    }
+  ],
+  "mjs_api_access": [
+    {
+      "match": "http://localhost:55804/*",
+      "access": "all",
+      "platform": "windows10"
+    }
+  ],
+  "theme_color": "#7D89A2"
+}
