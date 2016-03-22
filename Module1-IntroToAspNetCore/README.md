@@ -74,7 +74,7 @@ Estimated time to complete this module: **60 minutes**
 In this exercise, you'll create a new ASP.NET Core 1.0 Web Application project in Visual Studio 2015. You'll then explore the generated solution, and see it in action.
 
 <a name="Ex1Task1" ></a>
-#### Task 1 - Creating a New Site Using the One ASP.NET Experience ####
+#### Task 1 - Creating a site using the Web Application project template ####
 
 In this task, you'll create a new Web site in Visual Studio based on the **ASP.NET Core 1.0 Web Application** project template.
 
@@ -124,9 +124,20 @@ In this task, you'll create a new Web site in Visual Studio based on the **ASP.N
 
 	_The Bower package manager UI_
 
-1. Open the **Index.cshtml** file located inside the _Views/Home_ folder, to explore the content of the page.
+1. Open the **_Layout.cshtml** file located inside the _Views/Shared_ folder, to explore the layout of the page. This page is using a new Razor language feature in ASP.NET Core called [TagHelpers](https://docs.asp.net/en/latest/mvc/views/tag-helpers/intro.html). TagHelpers allow creating tags - or extending HTML tags - with server-side logic. Notice in the example below how that some of the the `link` tags include some additional attributes such as `aspnet-fallback-href`. The `link` TagHelper evaluates these on the server and creates JavaScript code which tests if CDN resources are unavailable and, if so, loads local copies of those files. These tags are wrapped in `environment` tags, which are evaluated on the server. The result of the environment tags below is that you will always load local resources when developing, but will attempt to leverage CDN resources in staging and production.
 
-1. Open the **_Layout.cshtml** file located inside the _Views/Shared_ folder, to explore the layout of the page.
+	````HTML
+    <environment names="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="~/css/site.css" />
+    </environment>
+    <environment names="Staging,Production">
+        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.5/css/bootstrap.min.css"
+              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+    </environment>
+    ````
 
 1. Open the **Startup.cs** file. In this class you'll find the **Configure** method which is used to wire up your Web site's configuration.
 
