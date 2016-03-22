@@ -1,5 +1,5 @@
 ﻿<a name="HOLTop" ></a>
-# ASP.NET Core 1.0 #
+# ASP.NET Core 1.0 Internals #
 
 ---
 
