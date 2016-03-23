@@ -16,7 +16,7 @@ In this module, you'll see how to:
 
 - Work with static files
 - Work with routing
-- Create a custom middleware
+- Write custom middleware
 - Add Authentication to your web applications
 
 <a name="Prerequisites"></a>
@@ -253,21 +253,23 @@ In this task, you'll configure the project to use ASP.NET MVC and configure a sa
 
 1. Run the site and verify the message is returned from your MVC controller by navigating to the **/home** endpoint.
 
+	> **Note:** ASP.NET Core MVC also includes a handy new utility method, `app.UseMvcWithDefaultRoute` so you don't have to remember that template string.
+
 <a name="Exercise3" ></a>
-### Exercise 3: Building a middleware ###
+### Exercise 3: Writing custom middleware ###
 
 Small application components that can be incorporated into an HTTP request pipeline are known collectively as middleware. ASP.NET Core 1.0 has integrated support for middleware, which are wired up in an application's **Configure** method during _Application Startup_.
 
-In this exercise, you'll create a middleware that sets the current culture based on a query string value.
+In this exercise, you'll create a middleware class that sets the current culture based on a query string value.
 
 <a name="Ex3Task1" ></a>
-#### Task 1 - Writing a middleware that sets the current culture based on a query string value ####
+#### Task 1 - Writing a middleware class that sets the current culture based on a query string value ####
 
 Middleware are components that are assembled into an application pipeline to handle requests and responses. Each component can choose whether to pass the request on to the next component in the pipeline, and can perform certain actions before and after the next component in the pipeline. Request delegates are used to build this request pipeline, which are then used to handle each HTTP request to your application.
 
 Request delegates are configured using **Run**, **Map**, and **Use** extension methods on the **IApplicationBuilder** type that is passed into the **Configure** method in the **Startup** class. An individual request delegate can be specified in-line as an anonymous method, or it can be defined in a reusable class. These reusable classes are middleware, or middleware components. Each middleware component in the request pipeline is responsible for invoking the next component in the chain, or choosing to short-circuit the chain if appropriate.
 
-In this task, you'll create an inline middleware.
+In this task, you'll create inline middleware.
 
 1. Open **Visual Studio Community 2015** and select **File | New Project...** to start a new solution using the **ASP.NET Web Application** template, name it _MiddlewareApp_, click **OK** and then select the **Empty** template under **ASP.NET 5 Templates**.
 
