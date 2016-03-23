@@ -139,9 +139,9 @@ In this task, you'll create a new Web site in Visual Studio based on the **ASP.N
     </environment>
     ````
 
-1. Open the **Startup.cs** file. In this class you'll find the **Configure** method which is used to wire up your Web site's configuration.
+1. Open the **Startup.cs** file. In this class you'll find [the **Configure** method](https://docs.asp.net/en/latest/fundamentals/startup.html#the-configure-method), which is used to specify how the ASP.NET application will respond to individual HTTP requests.
 
-	> **Note:** ASP.NET Core 1.0 assumes that no frameworks are being used unless you explicitly configure it in the **Configure** method. This enables you to have full control over the HTTP pipeline. All services, including MVC, are configured as middleware. You'll learn more about middleware in Module 2.
+	> **Note:** ASP.NET Core 1.0 assumes that no frameworks are being used unless you explicitly configure it in the **Configure** method. This enables you to have full control over the HTTP pipeline.
 
 	![The Configure method](Images/configure-method.png?raw=true "The Configure method")
 
@@ -164,7 +164,7 @@ In this task, you'll create a new Web site in Visual Studio based on the **ASP.N
     }
 	````
 
-1. The **ConfigureServices** method should be used to configure the services used by your application. You'll notice that ASP.NET Core 1.0 supports [Dependency Injection](https://docs.asp.net/en/latest/fundamentals/dependency-injection.html) natively.
+1. The [**ConfigureServices** method](https://docs.asp.net/en/latest/fundamentals/startup.html#the-configureservices-method) should be used to configure the services used by your application. You'll notice that ASP.NET Core 1.0 supports [Dependency Injection](https://docs.asp.net/en/latest/fundamentals/dependency-injection.html) natively.
 
 	![The ConfigureServices method](Images/configureservices-method.png?raw=true "The ConfigureServices method")
 
