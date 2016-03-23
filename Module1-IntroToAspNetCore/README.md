@@ -312,7 +312,7 @@ In this exercise, you'll add a test project to your solution and then run unit t
 <a name="Ex3Task1" ></a>
 #### Task 1 - Creating the test project ####
 
-A test project is just a class library with references to a test runner and the project being tested (also referred to as the System Under Test or SUT). It’s a good idea to organize your test projects in a separate folder from your SUT projects.
+A test project is just a class library with references to a test runner and the project being tested (also referred to as the System Under Test or SUT). It’s a good idea to organize your test projects in a separate folder from your SUT projects. We'll be using the open-source [xUnit testing tool](http://xunit.github.io/docs/getting-started-dnx.html) in this exercise.
 
 In this task, you'll create a test project in an ASP.NET Core solution.
 
@@ -418,7 +418,7 @@ In this task, you'll create a test project in an ASP.NET Core solution.
 
 1. In **Solution Explorer**, right-click the **MyWebApp.UnitTests** project and select **Add | Class...**, name the file _MyTest.cs_ and click **Add**.
 
-1. Add a method `public void MyFirstTest()` and decorate it with the `[Fact]` attribute, importing any required namespaces as you go
+1. Add a method `public void MyFirstTest()` and decorate it with the `[Fact]` attribute, importing any required namespaces as you go.
 
 1. Inside the **MyFirstTest** method, add a simple true assertion to have a passing test, e.g. `Assert.Equal(1, 1);`
 
@@ -463,6 +463,47 @@ In this task, you'll create a test project in an ASP.NET Core solution.
 	![Results in Test Explorer](Images/results-in-test-explorer.png?raw=true "Results in Test Explorer")
 
 	_Results in Test Explorer_
+
+	> **Note:** If it bothers you, you can make that second test pass by changing from `Assert.Equal` to `Assert.NotEqual`.
+
+1. Next, we'll add a simple test for our `HomeController`. In **Solution Explorer**, right-click the **MyWebApp.UnitTests** project and select **Add | Class...**, name the file _HomeControllerTests.cs_ and click **Add**.
+
+1. Add a method `public void HomeControllerIndexReturnsResponse()` and decorate it with the `[Fact]` attribute, importing any required namespaces as you go.
+
+1. Update the **HomeControllerIndexReturnsResponse** method, adding the following code (using the Arrange / Act / Assert pattern):
+
+	````C#
+    using Microsoft.AspNet.Mvc;
+    using MyWebApp.Controllers;
+    using Xunit;
+    
+    namespace MyWebApp.UnitTests
+    {
+        public class HomeControllerTests
+        {
+            [Fact]
+            public void HomeControllerIndexReturnsResponse() {
+                // Arrange
+                var controller = new HomeController();
+    
+                // Act
+                var result = controller.Index() as ViewResult;
+    
+                // Assert
+                Assert.NotNull(result);
+            }
+        }
+    }	
+	````
+
+1. Re-run your tests in the Test Explorer and verify that your HomeController test passes.
+
+	> **Note:** The previous tasks show you how to configure unit testing in an ASP.NET Core application, and how to create a simple test for a controller action. Unit testing is an important component of quality application development, and we encourage you to devote some time after this lab for some further study. Here are a few unit testing recommendations and resources:
+    * While it’s useful to be able to test controller actions, we generally recommend that you focus your unit testing efforts on your application-specific code rather than MVC-specific functionality. For instance, rather than testing controller actions, it’s probably more useful to test application-specific logic and services.
+    * ASP.NET Core and Entity Framework Core were both designed with testability in mind. ASP.NET Core and Entity Framework Core both have comprehensive support for dependency injection, and Entity Framework Core’s In-Memory Database support was created specifically to support unit testing.
+    * For more in-depth information on unit testing with ASP.NET Core and Entity Framework Core, see the following docs:
+        * [Unit Testing ASP.NET Core applications](https://docs.asp.net/en/latest/testing/unit-testing.html)
+        * [Unit Testing Entity Framework with the InMemory provider](https://docs.efproject.net/en/latest/miscellaneous/testing.html)
 
 <a name="Exercise4" ></a>
 ### Exercise 4: Cross-platform development ###
