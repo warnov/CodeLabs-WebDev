@@ -74,7 +74,7 @@ Estimated time to complete this module: **60 minutes**
 In this exercise, you'll create a new ASP.NET Core 1.0 Web Application project in Visual Studio 2015. You'll then explore the generated solution, and see it in action.
 
 <a name="Ex1Task1" ></a>
-#### Task 1 - Creating a New Site Using the One ASP.NET Experience ####
+#### Task 1 - Creating a site using the Web Application project template ####
 
 In this task, you'll create a new Web site in Visual Studio based on the **ASP.NET Core 1.0 Web Application** project template.
 
@@ -124,11 +124,22 @@ In this task, you'll create a new Web site in Visual Studio based on the **ASP.N
 
 	_The Bower package manager UI_
 
-1. Open the **Index.cshtml** file located inside the _Views/Home_ folder, to explore the content of the page.
+1. Open the **_Layout.cshtml** file located inside the _Views/Shared_ folder, to explore the layout of the page. This page is using a new Razor language feature in ASP.NET Core called [TagHelpers](https://docs.asp.net/en/latest/mvc/views/tag-helpers/intro.html). TagHelpers allow creating tags - or extending HTML tags - with server-side logic. Notice in the example below how that some of the the `link` tags include some additional attributes such as `aspnet-fallback-href`. The `link` TagHelper evaluates these on the server and creates JavaScript code which tests if CDN resources are unavailable and, if so, loads local copies of those files. These tags are wrapped in `environment` tags, which are evaluated on the server. The result of the environment tags below is that you will always load local resources when developing, but will attempt to leverage CDN resources in staging and production.
 
-1. Open the **_Layout.cshtml** file located inside the _Views/Shared_ folder, to explore the layout of the page.
+	````HTML
+    <environment names="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="~/css/site.css" />
+    </environment>
+    <environment names="Staging,Production">
+        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.5/css/bootstrap.min.css"
+              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+    </environment>
+    ````
 
-1. Open the **Startup.cs** file. In this class you'll find the **Configure** method which is used to wire up your Web site's configuration.
+1. Open the **Startup.cs** file. In this class you'll find [the **Configure** method](https://docs.asp.net/en/latest/fundamentals/startup.html#the-configure-method), which is used to specify how the ASP.NET application will respond to individual HTTP requests.
 
 	> **Note:** ASP.NET Core 1.0 assumes that no frameworks are being used unless you explicitly configure it in the **Configure** method. This enables you to have full control over the HTTP pipeline.
 
@@ -153,13 +164,13 @@ In this task, you'll create a new Web site in Visual Studio based on the **ASP.N
     }
 	````
 
-1. The **ConfigureServices** method should be used to configure the services used by your application. You'll notice that ASP.NET Core 1.0 supports Dependency Injection natively.
+1. The [**ConfigureServices** method](https://docs.asp.net/en/latest/fundamentals/startup.html#the-configureservices-method) should be used to configure the services used by your application. You'll notice that ASP.NET Core 1.0 supports [Dependency Injection](https://docs.asp.net/en/latest/fundamentals/dependency-injection.html) natively.
 
 	![The ConfigureServices method](Images/configureservices-method.png?raw=true "The ConfigureServices method")
 
 	_The ConfigureServices method_
 
-1. Open the **HomeController.cs** file in the **Controllers** folder. ASP.NET MVC 6 supports regular controllers (inheriting from the **Controller** base type) and POCO controllers.
+1. Open the **HomeController.cs** file in the **Controllers** folder. ASP.NET Core supports regular controllers (inheriting from the **Controller** base type) as well as POCO controllers (controllers which do not inherit from the **Controller** base type).
 
 1. Press **F5** to build and run the solution.
 
@@ -178,7 +189,7 @@ Entity Framework (EF) is an object-relational mapper (ORM) that enables you to c
 
 The Entity Framework Code First modeling workflow allows you to use your own domain classes to represent the model that EF relies on when performing queries, change-tracking and updating functions. Using the Code First development workflow, you do not need to begin your application by creating a database or specifying a schema. Instead, you can write standard .NET classes that define the most appropriate domain model objects for your application, and Entity Framework will create the database for you.
 
-> **Note:** You can learn more about Entity Framework [here](http://www.asp.net/entity-framework).
+> **Note:** You can learn more about Entity Framework [here](https://docs.efproject.net).
 
 <a name="Ex2Task1" ></a>
 #### Task 1 - Creating a New Model ####
@@ -301,7 +312,7 @@ In this exercise, you'll add a test project to your solution and then run unit t
 <a name="Ex3Task1" ></a>
 #### Task 1 - Creating the test project ####
 
-A test project is just a class library with references to a test runner and the project being tested (also referred to as the System Under Test or SUT). It’s a good idea to organize your test projects in a separate folder from your SUT projects.
+A test project is just a class library with references to a test runner and the project being tested (also referred to as the System Under Test or SUT). It’s a good idea to organize your test projects in a separate folder from your SUT projects. We'll be using the open-source [xUnit testing tool](http://xunit.github.io/docs/getting-started-dnx.html) in this exercise.
 
 In this task, you'll create a test project in an ASP.NET Core solution.
 
@@ -407,7 +418,7 @@ In this task, you'll create a test project in an ASP.NET Core solution.
 
 1. In **Solution Explorer**, right-click the **MyWebApp.UnitTests** project and select **Add | Class...**, name the file _MyTest.cs_ and click **Add**.
 
-1. Add a method `public void MyFirstTest()` and decorate it with the `[Fact]` attribute, importing any required namespaces as you go
+1. Add a method `public void MyFirstTest()` and decorate it with the `[Fact]` attribute, importing any required namespaces as you go.
 
 1. Inside the **MyFirstTest** method, add a simple true assertion to have a passing test, e.g. `Assert.Equal(1, 1);`
 
@@ -453,15 +464,58 @@ In this task, you'll create a test project in an ASP.NET Core solution.
 
 	_Results in Test Explorer_
 
+	> **Note:** If it bothers you, you can make that second test pass by changing from `Assert.Equal` to `Assert.NotEqual`.
+
+1. Next, we'll add a simple test for our `HomeController`. In **Solution Explorer**, right-click the **MyWebApp.UnitTests** project and select **Add | Class...**, name the file _HomeControllerTests.cs_ and click **Add**.
+
+1. Add a method `public void HomeControllerIndexReturnsResponse()` and decorate it with the `[Fact]` attribute, importing any required namespaces as you go.
+
+1. Update the **HomeControllerIndexReturnsResponse** method, adding the following code (using the Arrange / Act / Assert pattern):
+
+	````C#
+    using Microsoft.AspNet.Mvc;
+    using MyWebApp.Controllers;
+    using Xunit;
+    
+    namespace MyWebApp.UnitTests
+    {
+        public class HomeControllerTests
+        {
+            [Fact]
+            public void HomeControllerIndexReturnsResponse() {
+                // Arrange
+                var controller = new HomeController();
+    
+                // Act
+                var result = controller.Index() as ViewResult;
+    
+                // Assert
+                Assert.NotNull(result);
+            }
+        }
+    }	
+	````
+
+1. Re-run your tests in the Test Explorer and verify that your HomeController test passes.
+
+	> **Note:** The previous tasks show you how to configure unit testing in an ASP.NET Core application, and how to create a simple test for a controller action. Unit testing is an important component of quality application development, and we encourage you to devote some time after this lab for some further study. Here are a few unit testing recommendations and resources:
+    * While it’s useful to be able to test controller actions, we generally recommend that you focus your unit testing efforts on your application-specific code rather than MVC-specific functionality. For instance, rather than testing controller actions, it’s probably more useful to test application-specific logic and services.
+    * ASP.NET Core and Entity Framework Core were both designed with testability in mind. ASP.NET Core and Entity Framework Core both have comprehensive support for dependency injection, and Entity Framework Core’s In-Memory Database support was created specifically to support unit testing.
+    * For more in-depth information on unit testing with ASP.NET Core and Entity Framework Core, see the following docs:
+        * [Unit Testing ASP.NET Core applications](https://docs.asp.net/en/latest/testing/unit-testing.html)
+        * [Unit Testing Entity Framework with the InMemory provider](https://docs.efproject.net/en/latest/miscellaneous/testing.html)
+
 <a name="Exercise4" ></a>
 ### Exercise 4: Cross-platform development ###
 
 To appeal to a broader audience of developers, **ASP.NET Core 1.0** supports cross-platform development on Windows, Mac and Linux. The entire ASP.NET Core 1.0 stack is open source and encourages community contributions and engagement. ASP.NET Core 1.0 comes with a new, agile project system in Visual Studio while also providing a complete command-line interface so that you can develop using the tools of your choice.
 
-In this exercise, you'll create a new project and run it in **Ubuntu** 14.04 using the terminal and **Visual Studio Code**.
+In this exercise, you'll create a new project and run it in **Ubuntu** 14.04 using the terminal and **Visual Studio Code**. Full instructions for installing ASP.NET Core on all platforms are available [here](https://docs.asp.net/en/latest/getting-started/index.html).
 
 <a name="Ex4Task1" ></a>
 #### Task 1 - Creating the Ubuntu environment ####
+
+> **Note:** We've documented the necessary steps for creating an Ubuntu development environment, but if you're completing this Code Lab at Build 2016, we've already configured your development environment in a Hyper-V virtual machine. You can skim through Task 1 to understand what's involved, or just skip ahead to [Task 2 - Creating a ASP.NET Core 1.0 application using Yeoman](#Ex4Task2).
 
 In this task, you'll set up your **Ubuntu** 14.04 environment by installing **ASP.NET Core 1.0** dependencies, as well as **Visual Studio Code**, **Yeoman** and the **ASP.NET generator**.
 
