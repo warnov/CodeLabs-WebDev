@@ -164,13 +164,13 @@ In this task, you'll create a new Web site in Visual Studio based on the **ASP.N
     }
 	````
 
-1. The **ConfigureServices** method should be used to configure the services used by your application. You'll notice that ASP.NET Core 1.0 supports Dependency Injection natively.
+1. The **ConfigureServices** method should be used to configure the services used by your application. You'll notice that ASP.NET Core 1.0 supports [Dependency Injection](https://docs.asp.net/en/latest/fundamentals/dependency-injection.html) natively.
 
 	![The ConfigureServices method](Images/configureservices-method.png?raw=true "The ConfigureServices method")
 
 	_The ConfigureServices method_
 
-1. Open the **HomeController.cs** file in the **Controllers** folder. ASP.NET MVC 6 supports regular controllers (inheriting from the **Controller** base type) and POCO controllers.
+1. Open the **HomeController.cs** file in the **Controllers** folder. ASP.NET Core supports regular controllers (inheriting from the **Controller** base type) and POCO controllers.
 
 1. Press **F5** to build and run the solution.
 
