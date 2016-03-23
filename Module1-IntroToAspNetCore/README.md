@@ -510,10 +510,12 @@ In this task, you'll create a test project in an ASP.NET Core solution.
 
 To appeal to a broader audience of developers, **ASP.NET Core 1.0** supports cross-platform development on Windows, Mac and Linux. The entire ASP.NET Core 1.0 stack is open source and encourages community contributions and engagement. ASP.NET Core 1.0 comes with a new, agile project system in Visual Studio while also providing a complete command-line interface so that you can develop using the tools of your choice.
 
-In this exercise, you'll create a new project and run it in **Ubuntu** 14.04 using the terminal and **Visual Studio Code**.
+In this exercise, you'll create a new project and run it in **Ubuntu** 14.04 using the terminal and **Visual Studio Code**. Full instructions for installing ASP.NET Core on all platforms are available [here](https://docs.asp.net/en/latest/getting-started/index.html).
 
 <a name="Ex4Task1" ></a>
 #### Task 1 - Creating the Ubuntu environment ####
+
+> **Note:** We've documented the necessary steps for creating an Ubuntu development environment, but if you're completing this Code Lab at Build 2016, we've already configured your development environment in a Hyper-V virtual machine. You can skim through Task 1 to understand what's involved, or just skip ahead to [Task 2 - Creating a ASP.NET Core 1.0 application using Yeoman](#Ex4Task2).
 
 In this task, you'll set up your **Ubuntu** 14.04 environment by installing **ASP.NET Core 1.0** dependencies, as well as **Visual Studio Code**, **Yeoman** and the **ASP.NET generator**.
 
