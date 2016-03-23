@@ -170,7 +170,7 @@ In this task, you'll create a new Web site in Visual Studio based on the **ASP.N
 
 	_The ConfigureServices method_
 
-1. Open the **HomeController.cs** file in the **Controllers** folder. ASP.NET Core supports regular controllers (inheriting from the **Controller** base type) and POCO controllers.
+1. Open the **HomeController.cs** file in the **Controllers** folder. ASP.NET Core supports regular controllers (inheriting from the **Controller** base type) as well as POCO controllers (controllers which do not inherit from the **Controller** base type).
 
 1. Press **F5** to build and run the solution.
 
