@@ -141,7 +141,7 @@ In this task, you'll create a new Web site in Visual Studio based on the **ASP.N
 
 1. Open the **Startup.cs** file. In this class you'll find the **Configure** method which is used to wire up your Web site's configuration.
 
-	> **Note:** ASP.NET Core 1.0 assumes that no frameworks are being used unless you explicitly configure it in the **Configure** method. This enables you to have full control over the HTTP pipeline.
+	> **Note:** ASP.NET Core 1.0 assumes that no frameworks are being used unless you explicitly configure it in the **Configure** method. This enables you to have full control over the HTTP pipeline. All services, including MVC, are configured as middleware. You'll learn more about middleware in Module 2.
 
 	![The Configure method](Images/configure-method.png?raw=true "The Configure method")
 
