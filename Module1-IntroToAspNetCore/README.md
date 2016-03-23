@@ -189,7 +189,7 @@ Entity Framework (EF) is an object-relational mapper (ORM) that enables you to c
 
 The Entity Framework Code First modeling workflow allows you to use your own domain classes to represent the model that EF relies on when performing queries, change-tracking and updating functions. Using the Code First development workflow, you do not need to begin your application by creating a database or specifying a schema. Instead, you can write standard .NET classes that define the most appropriate domain model objects for your application, and Entity Framework will create the database for you.
 
-> **Note:** You can learn more about Entity Framework [here](http://www.asp.net/entity-framework).
+> **Note:** You can learn more about Entity Framework [here](https://docs.efproject.net).
 
 <a name="Ex2Task1" ></a>
 #### Task 1 - Creating a New Model ####
