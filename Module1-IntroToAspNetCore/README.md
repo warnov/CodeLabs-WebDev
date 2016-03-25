@@ -470,7 +470,7 @@ In this task, you'll create a test project in an ASP.NET Core solution.
 	> **Note:** If it bothers you, you can make that second test pass by changing from `Assert.Equal` to `Assert.NotEqual`.
 
 <a name="Ex3Task3" ></a>
-#### Task 1 - Testing a Controller Action ####
+#### Task 3 - Testing a Controller Action ####
 
 1. Next, we'll add a simple test for our `HomeController`. In **Solution Explorer**, right-click the **MyWebApp.UnitTests** project and select **Add | Class...**, name the file _HomeControllerTests.cs_ and click **Add**.
 
