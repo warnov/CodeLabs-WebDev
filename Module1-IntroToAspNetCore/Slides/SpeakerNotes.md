@@ -11,15 +11,19 @@
   * Configure: Sets up HTTP pipeline
   * ConfigureServices: Sets up application services
 * Run
+
 ## Exercise 2: Working with Data ##
 ### Task 1 - Creating a New Model ###
 * Create Person (Id, Name, Age)
+
 ### Task 2 - Creating an MVC Controller ###
 * Scaffold controller (Async actions, new context)
 * Show controller
+
 ### Task 3 - Running the Solution ###
 * Run, nav to /People
 * Show CRUD actions
+
 ## Exercise 3: Unit testing your apps ##
 ### Task 1 - Creating the test project ###
 * Add Solution Folder named "test"
@@ -34,6 +38,7 @@
 }
 ```
 * Solution Explorer, add ref to Web Project
+
 ### Task 2 - Creating some Simple Tests ###
 * Add class `MyTest.cs`
 ```csharp
@@ -57,6 +62,7 @@ namespace MyWebApp.UnitTests
      }
 }
 ```
+
 ### Task 3 - Testing a Controller Action ###
 * Add class `HomeControllerTests.cs`
 ```csharp
@@ -82,16 +88,20 @@ namespace MyWebApp.UnitTests
     }
 }
 ```
+
 ## Exercise 4: Cross-platform development ##
 ### Task 1 - Creating the Ubuntu environment ###
  > Quickly review, but this is already done on lab computers
+
 ### Task 2 - Creating a ASP.NET Core 1.0 application using Yeoman ###
 * Open terminal (pinned to taskbar)
 * `yo aspnet` / Web Application
 * cd into directory and use `tree` to show folder structure
 * `dnx restore`
+
 ### Task 3 - Opening the site in VS Code ###
 * Open site in VS Code
 * Run with `dnx web`
 * Browse to `http://localhost:5000`
+
 ## Summary ##
