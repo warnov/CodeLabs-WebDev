@@ -86,7 +86,7 @@ Estimated time to complete this module: **60 minutes**
 In this exercise, you will learn the basics of **Angular 2** taking advantage of the official documentation.
 
 <a name="Ex1Task1" ></a>
-#### Task 1 - Reviewing the Angular 2 documentation ####
+#### Task 1 - Introducing the Angular 2 documentation ####
 
 In this task, you will explore some of the resources that Angular 2 have to start working with it.
 
