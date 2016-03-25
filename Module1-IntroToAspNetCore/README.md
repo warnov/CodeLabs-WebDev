@@ -416,6 +416,9 @@ In this task, you'll create a test project in an ASP.NET Core solution.
 	}
 	````
 
+<a name="Ex3Task2" ></a>
+#### Task 2 - Creating some Simple Tests ####
+
 1. In **Solution Explorer**, right-click the **MyWebApp.UnitTests** project and select **Add | Class...**, name the file _MyTest.cs_ and click **Add**.
 
 1. Add a method `public void MyFirstTest()` and decorate it with the `[Fact]` attribute, importing any required namespaces as you go.
@@ -465,6 +468,9 @@ In this task, you'll create a test project in an ASP.NET Core solution.
 	_Results in Test Explorer_
 
 	> **Note:** If it bothers you, you can make that second test pass by changing from `Assert.Equal` to `Assert.NotEqual`.
+
+<a name="Ex3Task3" ></a>
+#### Task 1 - Testing a Controller Action ####
 
 1. Next, we'll add a simple test for our `HomeController`. In **Solution Explorer**, right-click the **MyWebApp.UnitTests** project and select **Add | Class...**, name the file _HomeControllerTests.cs_ and click **Add**.
 
