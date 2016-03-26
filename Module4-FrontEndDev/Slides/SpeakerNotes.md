@@ -1,14 +1,20 @@
 
 # Front End Development #
 ## Overview ##
-### Objectives ###
-### Prerequisites ###
-### Setup ###
-### Using the Code Snippets ###
 ## Exercises ##
 ### Exercise 1: Creating an Angular 2 application ###
 #### Task 1 - Introducing the Angular 2 documentation ####
+* Browse to https://angular.io/
+* Click on Docs button and overview Docs
+* In References section, click on Cheatsheet
+
 #### Task 2 - Exploring the Angular 2 Quickstart ####
+* Click on 5 Minute Quickstart (https://angular.io/docs/ts/latest/quickstart.html)
+* Show dependencies in index.html
+* Explain main.ts
+* Explain app.component.ts
+* Edit template and demonstrate change
+
 ### Exercise 2: Exploring a more advanced Angular 2 application in an ASP.NET Core application ###
 #### Task 1 - Exploring the application ####
 #### Task 2 - Running the Solution ####
