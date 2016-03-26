@@ -521,7 +521,7 @@ In this exercise, you'll create a new project and run it in **Ubuntu** 14.04 usi
 <a name="Ex4Task1" ></a>
 #### Task 1 - Creating the Ubuntu environment ####
 
-> **Note:** We've documented the necessary steps for creating an Ubuntu development environment, but if you're completing this Code Lab at Build 2016, we've already configured your development environment in a Hyper-V virtual machine. You can skim through Task 1 to understand what's involved, or just skip ahead to [Task 2 - Creating a ASP.NET Core 1.0 application using Yeoman](#Ex4Task2).
+> **IMPORTANT NOTE:** We've documented the necessary steps for creating an Ubuntu development environment, but if you're completing this Code Lab at Build 2016, we've already configured your development environment in a Hyper-V virtual machine. You can skim through Task 1 to understand what's involved, or just skip ahead to [Task 2 - Creating a ASP.NET Core 1.0 application using Yeoman](#Ex4Task2).
 
 In this task, you'll set up your **Ubuntu** 14.04 environment by installing **ASP.NET Core 1.0** dependencies, as well as **Visual Studio Code**, **Yeoman** and the **ASP.NET generator**.
 
@@ -692,6 +692,8 @@ In this task, you'll open and run the generated **ASP.NET Core 1.0** web applica
 	![Browsing the site](Images/browsing-the-site.png?raw=true "Browsing the site")
 
 	_Browsing the site_
+
+> **Note** : For RC2 and following, the dnvm / dnx / dnu toolchain will be changed to use a `dotnet` based CLI.
 
 ---
 
