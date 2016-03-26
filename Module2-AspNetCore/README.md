@@ -597,7 +597,7 @@ In this task you'll use the dependency injection system to configure the **Reque
 	````C#
 	public RequestCultureMiddleware(RequestDelegate next, IOptions<RequestCultureOptions> options)
 	{
-		next = next;
+		this.next = next;
 		options = options.Value;
 	}
 	````
