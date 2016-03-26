@@ -17,7 +17,21 @@
 
 ### Exercise 2: Exploring a more advanced Angular 2 application in an ASP.NET Core application ###
 #### Task 1 - Exploring the application ####
+* Open OrderApp in Source/Ex2/Begin
+* Show /wwwroot/js files
+* Show package.json
+* Explain gulp copy tasks
+* Show Task Runner Explorer
+* Open _Layout.cshtml and show script references to scripts we copied via gulp
+* Open Index view and show Angular components (`<order-app>` and `System.config`)
+* Show `order-app.component.ts`
+* Show `order-app.html` template
+
 #### Task 2 - Running the Solution ####
+* Run the application
+* Click on an order
+* Modify an order / details item and show that all totals are updated (including order grid above)
+
 ### Exercise 3: Integrating with ASP.NET Core API controller ###
 #### Task 1 - Creating an ASP.NET Core API controller ####
 #### Task 2 - Integrating the front end with the API controller ####
