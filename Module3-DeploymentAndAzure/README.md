@@ -342,7 +342,7 @@ In this task, you'll create a staging deployment slot for your **Web App**. Then
 
 	_Configuring the Git Deployment_
 
-1. Now, click **Set up basic authentication** in the **Deployment Source** blade of your web app to configure the user that will perform the deployments. Fill in the credentials and then click **Save** at the top.
+1.	Click **Deployment credentials** in the **Settings** blade of your web app to configure the user that will perform the deployments. Fill in the credentials and then click **Save** at the top.
 
 1. Back in the **Settings** blade, select **Deployment slots**. Click the **Add Slot** command at the top and create a new slot named **staging**. Set your Web App as **Configuration Source** and then click **OK**.
 
