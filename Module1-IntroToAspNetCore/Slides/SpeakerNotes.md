@@ -29,7 +29,7 @@
 * Add Solution Folder named "test"
 * Add Project / "Class Library (Package)"
 * Open project.json
-* Change frameworks to "dns451" and "dnxcore50"
+* Change frameworks to "dnx451" and "dnxcore50"
 * Use Package Manager to add "xunit" and "xunit.runner.dnx"
 * Add command to project.json
 ```JSON
