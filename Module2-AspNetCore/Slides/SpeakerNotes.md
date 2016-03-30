@@ -2,6 +2,7 @@
 ## Overview ##
 * App layer hasn't changed much since ASP.NET MVC 5
 * Framework has significantly changed
+
 ## Exercises ##
 ### Exercise 1: Working with static files ###
 #### Task 1 - Serving static files ####
@@ -14,13 +15,16 @@
 * Run app, show that middleware (not Index.html) is served
 * Navigate to `/Index.html` and show static file is served
  > Note: You can commend out the `app.UseStaticFiles` call and show HTML isn't served
+
 #### Task 2 - Adding default document support ####
 * Change `app.UseStaticFiles()` to `app.UseFileServer()`
 * Run and show that Index.html is shown as default document
+
 ### Exercise 2: Introduction to Routing & MVC ###
 #### Task 1 - Adding MVC ####
 * Add MVC package ("6.0.0-rc1-final")
 * Add Controller, change Index to:
+
 ```csharp
 public class HomeController : Controller
 {
@@ -28,8 +32,10 @@ public class HomeController : Controller
   public string Index() => "Hello from MVC!";
 }
 ```
+
 * In `ConfigureServices()` add `services.AddMvc()`
 * In `Configure()` add:
+
 ```csharp
 app.UseMvc(routes =>
 	{
@@ -39,10 +45,12 @@ app.UseMvc(routes =>
 	});
 ```
 > Note: Can show `app.UseMvcWithDefaultRoute()`
+
 ### Exercise 3: Writing custom middleware ###
 #### Task 1 - Writing a middleware class that sets the current culture based on a query string value ####
 * File / New / Empty
 * Open `Startup.cs` and insert snippet `ASPNETCore - Ex3 - InlineMiddleware`
+
 ```csharp
 public void Configure(IApplicationBuilder app)
 {
@@ -73,13 +81,16 @@ public void Configure(IApplicationBuilder app)
     });
 }
 ```
+
 * Browse to `/?culture=no`
+
 #### Task 2 - Moving the middleware to its own type ####
 * Add Class / `RequestCultureMiddleware.cs`
 * Add snippet `ASPNETCore - Ex3 - RequestCultureMiddlewareClass`
 * Inside class, add `ASPNETCore - Ex3 - RequestCultureMiddlewareInvokeMethod`
 * End of class add `ASPNETCore - Ex3 - RequestCultureMiddlewareExtensionsClass`
 * In `Startup.cs`, replace inline middleware with `app.UseRequestCulture();`
+
 #### Task 3 - Adding options to middleware ####
 #### Task 4 - Reading request culture configuration from a file ####
 #### Task 5 - Flowing options from dependency injection system to middleware ####
