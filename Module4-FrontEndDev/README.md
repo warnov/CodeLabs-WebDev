@@ -57,6 +57,8 @@ In order to run the exercises in this module, you will need to set up your envir
 
 > **Note:** Make sure you have checked all the dependencies for this module before running the setup.
 
+Ensure Developer Mode is enabled on Windows 10 by going to settings > Update & Security > For developers and selecting **Developer mode**. 
+
 <a name="CodeSnippets" ></a>
 ### Using the Code Snippets ###
 
