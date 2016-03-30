@@ -82,13 +82,13 @@ In this task, you'll create a new Web site in Visual Studio based on the **ASP.N
 
 1. Open **Visual Studio Community 2015** and select **File | New | Project...** to create a new solution.
 
-1. In the **New Project** dialog box, select **ASP.NET Web Application** under the **Visual C# | Web** tab, and make sure **.NET Framework 4.6** is selected. Name the project _MyWebApp_, choose a **Location** and click **OK**.
+1. In the **New Project** dialog box, select **ASP.NET Web Application** under the **Visual C# | Web** tab, and make sure **.NET Framework 4.6** is selected and **Add Azure Insights to project** is cleared. Name the project _MyWebApp_, choose a **Location** and click **OK**.
 
 	![New ASP.NET Web Application project](Images/creating-new-aspnet-web-application-project.png?raw=true "New ASP.NET Web Application project")
 
 	_Creating a new ASP.NET Web Application project_
 
-1. In the **New ASP.NET Project** dialog box, select the **Web Application** template under **ASP.NET 5 Templates**. Also, make sure that the **Authentication** option is set to **Individual User Accounts**. Click **OK** to continue.
+1. In the **New ASP.NET Project** dialog box, select the **Web Application** template under **ASP.NET 5 Templates**. Also, make sure that **Host in the cloud** is cleared and the **Authentication** option is set to **Individual User Accounts**. Click **OK** to continue.
 
 	![Creating a new project with the Web Application template](Images/creating-a-new-aspnet-project.png?raw=true "Creating a new project with the Web Application template")
 

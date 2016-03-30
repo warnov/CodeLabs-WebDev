@@ -376,11 +376,22 @@ In this task you'll move the middleware to a separated file.
 	}
 	```
 
-1. Back in the application's **Startup.cs** file, replace the inline middleware delegate with the call to the `app.UseRequestCulture()` method to add your new middleware class to the HTTP pipeline.
+1. Back in the application's **Startup.cs** file, replace the inline middleware delegate with the call to the `app.UseRequestCulture()` method to add your new middleware class to the HTTP pipeline. When you're done, your `Configure` method should look like the code below:
 
 	<!-- mark:1 -->
 	``` C#
-	app.UseRequestCulture();
+    public void Configure(IApplicationBuilder app)
+    {
+        app.UseIISPlatformHandler();
+
+        app.UseRequestCulture();
+
+        app.Run(async (context) =>
+        {
+            await context.Response.WriteAsync($"Hello {CultureInfo.CurrentCulture.DisplayName}");
+        });
+
+    }
 	```
 
 1. Run the application and verify that the middleware is now running as a class.
@@ -764,7 +775,9 @@ In this task, you'll learn how the ASP.NET Core project templates use ASP.NET Id
 
 	_Account register view_
 
-1. After creating a new user and applying the database migrations, stop the application and explore the database by navigating to the **(localdb)MSSQLLocalDB/Databases/aspnet5-MyWebApp-<guid>/Tables** in the **SQL Server Object Explorer** view. Right-click the **dbo.AspNetUsers** table and select **View Data** to see the properties of the user you created.
+1. After you register your first user, you'll notice an error message suggesting that you apply existing migrations. Click **Apply Migrations**. You will now see that you're logged in as the new user.
+
+1. Stop the application and explore the database by navigating to the **(localdb)MSSQLLocalDB/Databases/aspnet5-MyWebApp-<guid>/Tables** in the **SQL Server Object Explorer** view. Right-click the **dbo.AspNetUsers** table and select **View Data** to see the properties of the user you created.
 
 	![Viewing the User Data in SQL Server Object Explorer](Images/viewing-user-data-in-sql-server-explorer.png?raw=true "Viewing the User Data in SQL Server Object Explorer")
 
