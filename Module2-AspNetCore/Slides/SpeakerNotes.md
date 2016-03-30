@@ -92,6 +92,48 @@ public void Configure(IApplicationBuilder app)
 * In `Startup.cs`, replace inline middleware with `app.UseRequestCulture();`
 
 #### Task 3 - Adding options to middleware ####
+
+> **Note**: If running late, this is a good task to just skip to the completed source.
+
+* Add Class / `RequestCultureOptions`
+* Add property:
+
+```csharp
+public class RequestCultureOptions
+{
+	public CultureInfo DefaultCulture { get; set; }
+}
+```
+* Modify **RequestCultureMiddleware** constructor to take **RequestCultureOptions**
+
+```csharp
+public class RequestCultureMiddleware
+{
+    private readonly RequestDelegate next;
+    private readonly RequestCultureOptions options;
+
+    public RequestCultureMiddleware(RequestDelegate next, RequestCultureOptions options)
+    {
+        this.next = next;
+        this.options = options;
+    }
+
+    //...
+}
+```
+
+* Replace **Invoke** with `Code Snippet - ASPNETCore - Ex3 - InvokeMethodWithDefaultCulture`
+* Replace **RequestCultureMiddlewareExtensions** with `ASPNETCore - Ex3 - UpdatedRequestCultureMiddlewareExtensions`
+* Open the Startup.cs file and set the fallback culture in the Configure method to some default value, e.g. "en-GB". `Code Snippet - ASPNETCore - Ex3 - UpdatedUseRequestCulture`
+
+```csharp
+app.UseRequestCulture(new RequestCultureOptions
+{
+     DefaultCulture = new CultureInfo("en-GB")
+});
+```
+* Run and verify the default culture is shown.
+
 #### Task 4 - Reading request culture configuration from a file ####
 #### Task 5 - Flowing options from dependency injection system to middleware ####
 ### Exercise 4: Adding Authentication to your web applications ###
