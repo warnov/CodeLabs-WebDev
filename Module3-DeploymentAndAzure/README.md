@@ -147,11 +147,11 @@ In this exercise you'll create a new Web site in Visual Studio based on the **AS
 
 	_Publishing the site to the new Microsoft Azure Web App_
 
-1. Verify your new Web app was successfully created in Azure by navigating to **http://{yourwebappname}.azurewebsites.net**.
+    Once publishing completes, the web app will be automatically launched in your browser (at **http://{yourwebappname}.azurewebsites.net**).
 
-	![Web app service created](Images/webapp-created.png?raw=true "Web app service created")
+	![Web app published](Images/webapp-published.png?raw=true "Web app published to Azure")
 
-	_Web app service created_
+	_Web app published to Azure_
 
 	> **Note:** Also, you can go to the [Azure portal](https://portal.azure.com/) and navigate to the Web app to see the details.
 
