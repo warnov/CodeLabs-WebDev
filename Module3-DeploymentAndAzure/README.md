@@ -118,13 +118,14 @@ In this exercise you'll create a new Web site in Visual Studio based on the **AS
 	_Create App Service dialog box_
 
 1. In the **Services** tab, click the add button next to **SQL Database** in **Resource Type** list.
-
+	
 	![Adding a new SQL Database](Images/adding-a-new-sql-database.png?raw=true "Adding a new SQL Database")
 
 	_Adding a new SQL Database_
 
 1. In the **Configure SQL Database** dialog box, create a new SQL Server by clicking the **New...** button. The **Configure SQL Server** dialog box will appear, fill the **Server Name**, **Administrator Username** and **Administrator Password** fields and then click **OK**.
 
+	NOTE: Do not use `admin` as your Database Administrator Username
 	![Configure SQL Server](Images/configure-sql-server.png?raw=true "Configure SQL Server")
 
 	_Configure SQL Server_
