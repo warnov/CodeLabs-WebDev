@@ -177,6 +177,7 @@ In this task, you'll go through the steps of enabling **Entity Framework Code Fi
 
 	<!-- mark:1 -->
 	````PowerShell
+	dnvm upgrade
 	dnx ef migrations add InitialMigration --context PeopleContext
 	````
 
