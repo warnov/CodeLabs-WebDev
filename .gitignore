@@ -177,8 +177,10 @@ ClientBin/
 *.dbproj.schemaview
 *.pfx
 *.publishsettings
-node_modules/
 orleans.codegen.cs
+
+# Note: Committing node_modules during Build
+#node_modules/
 
 # RIA/Silverlight projects
 Generated_Code/
