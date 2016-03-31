@@ -5,7 +5,7 @@
 
 ## Exercises ##
 ### Exercise 1: Working with static files ###
-#### Task 1 - Serving static files ####
+#### Task 1 - Serving static files (10 minutes) ####
 * File / New / Empty
 * `project.json` / dependencies node
 * Add `"Microsoft.AspNet.StaticFiles"` (can just type "static" and autocomplete)
@@ -20,7 +20,7 @@
 * Change `app.UseStaticFiles()` to `app.UseFileServer()`
 * Run and show that Index.html is shown as default document
 
-### Exercise 2: Introduction to Routing & MVC ###
+### Exercise 2: Introduction to Routing & MVC (10 minutes) ###
 #### Task 1 - Adding MVC ####
 * Add MVC package ("6.0.0-rc1-final")
 * Add Controller, change Index to:
@@ -46,7 +46,7 @@ app.UseMvc(routes =>
 ```
 > Note: Can show `app.UseMvcWithDefaultRoute()`
 
-### Exercise 3: Writing custom middleware ###
+### Exercise 3: Writing custom middleware (20 minutes) ###
 #### Task 1 - Writing a middleware class that sets the current culture based on a query string value ####
 * File / New / Empty
 * Open `Startup.cs` and insert snippet **ASPNETCore - Ex3 - InlineMiddleware**
@@ -84,7 +84,7 @@ public void Configure(IApplicationBuilder app)
 
 * Browse to `/?culture=no`
 
-#### Task 2 - Moving the middleware to its own type ####
+#### Task 2 - Moving the middleware to its own type (10 minutes) ####
 * Add Class / `RequestCultureMiddleware.cs`
 * Add snippet **ASPNETCore - Ex3 - RequestCultureMiddlewareClass**
 * Inside class, add **ASPNETCore - Ex3 - RequestCultureMiddlewareInvokeMethod**
