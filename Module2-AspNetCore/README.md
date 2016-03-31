@@ -59,7 +59,7 @@ This module includes the following exercises:
 
 1. [Working with static files](#Exercise1)
 1. [Introduction to Routing & MVC](#Exercise2)
-1. [Building a middleware](#Exercise3)
+1. [Building a middleware class](#Exercise3)
 1. [Adding Authentication to your web applications](#Exercise4)
 
 Estimated time to complete this module: **60 minutes**
