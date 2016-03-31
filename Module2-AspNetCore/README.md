@@ -264,6 +264,8 @@ Small application components that can be incorporated into an HTTP request pipel
 
 In this exercise, you'll create a middleware class that sets the current culture based on a query string value.
 
+> **Note:** We're using localization related middleware in this exercise as an example scenario, but in most application's you'd use [ASP.NET Core's built-in support localization support](https://docs.asp.net/en/latest/fundamentals/localization.html).
+
 <a name="Ex3Task1" ></a>
 #### Task 1 - Writing a middleware class that sets the current culture based on a query string value ####
 
