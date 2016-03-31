@@ -49,7 +49,7 @@ app.UseMvc(routes =>
 ### Exercise 3: Writing custom middleware ###
 #### Task 1 - Writing a middleware class that sets the current culture based on a query string value ####
 * File / New / Empty
-* Open `Startup.cs` and insert snippet `ASPNETCore - Ex3 - InlineMiddleware`
+* Open `Startup.cs` and insert snippet **ASPNETCore - Ex3 - InlineMiddleware**
 
 ```csharp
 public void Configure(IApplicationBuilder app)
@@ -86,9 +86,9 @@ public void Configure(IApplicationBuilder app)
 
 #### Task 2 - Moving the middleware to its own type ####
 * Add Class / `RequestCultureMiddleware.cs`
-* Add snippet `ASPNETCore - Ex3 - RequestCultureMiddlewareClass`
-* Inside class, add `ASPNETCore - Ex3 - RequestCultureMiddlewareInvokeMethod`
-* End of class add `ASPNETCore - Ex3 - RequestCultureMiddlewareExtensionsClass`
+* Add snippet **ASPNETCore - Ex3 - RequestCultureMiddlewareClass**
+* Inside class, add **ASPNETCore - Ex3 - RequestCultureMiddlewareInvokeMethod**
+* End of class add **ASPNETCore - Ex3 - RequestCultureMiddlewareExtensionsClass**
 * In `Startup.cs`, replace inline middleware with `app.UseRequestCulture();`
 
 #### Task 3 - Adding options to middleware ####
@@ -135,8 +135,31 @@ app.UseRequestCulture(new RequestCultureOptions
 * Run and verify the default culture is shown.
 
 #### Task 4 - Reading request culture configuration from a file ####
+* Follow lab doc (short step) [here](/Module2-AspNetCore/README.md#task-4---reading-request-culture-configuration-from-a-file)
+* Key points
+  * Use config package to read JSON, other config sources are available
+  * Config system made config values available to our middleware extension
+
 #### Task 5 - Flowing options from dependency injection system to middleware ####
+* Show **Module2-AspNetCore\Source\Ex3\End** solution
+* Key points
+  * DI is plumbed through middleware and config, eliminating need for custom code
+  * IOptions simplifies middleware class
+  * Don't need option specific extension in middleware
+  * Default services container is minimal, can use another DI container
+
 ### Exercise 4: Adding Authentication to your web applications ###
 #### Task 1 - Introduction to ASP.NET Identity ####
+* **File / New** / **Web Application** with **Individual User Accounts**
+* Show the additional dependencies this adds in `project.json`
+* In `Startup.cs`, show how Auth is configured in `ConfigureServices` and `Configure`
+* Show `AccountController`
+* Run and create a user
+* **Open SQL Server Object Explorer** and expand out **(localdb)MSSQLLocalDB/Databases/aspnet5-MyWebApp-/Tables**
+* Right-click on **dbo.AspNetUsers** and show data
+
 #### Task 2 - Enabling authentication using external providers ####
+* Walk through using [lab document](/Module2-AspNetCore/README.md#task-2---enabling-authentication-using-external-providers)
+* Use pre-configured FB application here: http://aka.ms/fb-build2016
+
 ## Summary ##
