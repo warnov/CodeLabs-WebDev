@@ -22,7 +22,7 @@
 
 ### Exercise 2: Introduction to Routing & MVC (10 minutes) ###
 #### Task 1 - Adding MVC ####
-* Add MVC package ("6.0.0-rc1-final")
+* Add MVC package: `"Microsoft.AspNet.Mvc": "6.0.0-rc1-final"`
 * Add Controller, change Index to:
 
 ```csharp
