@@ -80,15 +80,15 @@ In this task, you'll create an empty ASP.NET Core 1.0 project and configure it t
 
 1. Open **Visual Studio Community 2015** and select **File | New Project...** to start a new solution.
 
-1. In the **New Project** dialog box, select **ASP.NET Web Application** under the **Visual C# | Web** tab, and make sure **.NET Framework 4.6** is selected. Name the project _MyWebApp_, choose a **Location** and click **OK**.
+1. In the **New Project** dialog box, select **ASP.NET Core Web Application (.NET Core)** under the **Visual C# | Web** tab, and make sure **.NET Framework 4.6** is selected. Name the project _MyWebApp_, choose a **Location** and click **OK**.
 
-	![New ASP.NET Web Application project](Images/creating-new-aspnet-web-application-project.png?raw=true "New ASP.NET Web Application project")
+	![New ASP.NET Web Application project](Images/creating-a-new-aspnet-core-web-application.png?raw=true "New ASP.NET Web Application project")
 
 	_Creating a new ASP.NET Web Application project_
 
-1. In the **New ASP.NET Project** dialog box, select the **Empty** template under **ASP.NET 5 Templates**. Click **OK**.
+1. In the **New ASP.NET Core Web Application (.NET Core)** dialog box, select the **Empty** template under **ASP.NET Core Templates**. Click **OK**.
 
-	![Creating a new project with the ASP.NET Core Empty template](Images/creating-a-new-empty-project.png?raw=true "Creating a new project with the ASP.NET Core Empty template")
+	![Creating a new project with the ASP.NET Core Empty template](Images/creating-a-new-aspnet-core-empty-project.png?raw=true "Creating a new project with the ASP.NET Core Empty template")
 
 	_Creating a new project with the ASP.NET Core Empty template_
 
