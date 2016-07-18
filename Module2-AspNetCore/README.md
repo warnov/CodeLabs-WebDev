@@ -585,6 +585,7 @@ In this task, you'll use the new **Configuration** system loading the default cu
         public Startup()
         {
             var configuration = new ConfigurationBuilder()
+				.SetBasePath(env.ContentRootPath)
                 .AddJsonFile("config.json")
                 .Build();
 
@@ -867,9 +868,9 @@ In this task, you'll create a Facebook app and configure your Web Application pr
     public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
     {
 		
-        	// ...
+		// ...
 
-        	app.UseIdentity();
+		app.UseIdentity();
 
 		app.UseFacebookAuthentication(new FacebookOptions()
             {
